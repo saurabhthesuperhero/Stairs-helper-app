@@ -1,20 +1,34 @@
 package com.developersmarket.stairshelper
 
+import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.developersmarket.stairshelper.databinding.ActivityMainBinding
+import com.developersmarket.stairshelper.databinding.ActivitySettingsBinding
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+
     private lateinit var accelerometerSensor: AccelerometerSensor
     private lateinit var vibration: Vibration
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         accelerometerSensor = AccelerometerSensor(this)
         vibration = Vibration(this)
+
+        binding.btnSettings.setOnClickListener {
+            startActivity(Intent(this, SettingsActivity::class.java).apply {
+                // you can add values(if any) to pass to the next class or avoid using `.apply`
+                putExtra("keyIdentifier", "Dummy")
+            })
+        }
     }
 
 

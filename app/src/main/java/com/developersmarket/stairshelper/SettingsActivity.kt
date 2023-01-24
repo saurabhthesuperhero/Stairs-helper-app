@@ -79,12 +79,20 @@ class SettingsActivity : AppCompatActivity() {
 
     private fun createVibrationEffect(pattern: Int) {
         when (pattern) {
+//            0 -> vibrationEffect =
+//                VibrationEffect.createOneShot(vibrationDuration, vibrationStrength)
+//            1 -> vibrationEffect = VibrationEffect.createWaveform(
+//                longArrayOf(0, vibrationDuration),
+//                intArrayOf(0, vibrationStrength),
+//                vibrationFrequency
+//            )
+//            2 -> vibrationEffect = VibrationEffect.createPredefined(VibrationEffect.EFFECT_TICK)
+
             0 -> vibrationEffect =
                 VibrationEffect.createOneShot(vibrationDuration, vibrationStrength)
             1 -> vibrationEffect = VibrationEffect.createWaveform(
                 longArrayOf(0, vibrationDuration),
-                intArrayOf(0, vibrationStrength),
-                vibrationFrequency
+                -1
             )
             2 -> vibrationEffect = VibrationEffect.createPredefined(VibrationEffect.EFFECT_TICK)
         }
