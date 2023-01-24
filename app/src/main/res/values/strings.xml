@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Stairs Helper</string>
+    <string-array name="vibration_patterns">
+        <item>One Shot</item>
+        <item>Waveform</item>
+        <item>Predefined</item>
+    </string-array>
+
+</resources>
